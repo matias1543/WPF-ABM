@@ -1,0 +1,136 @@
+﻿<Window x:Class="Proyecto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="850" Width="1500">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="185 "/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="250"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="0,0,0,7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="84"/>
+            <RowDefinition Height="558"/>
+            <RowDefinition Height="92"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="403"/>
+            <ColumnDefinition Width="1080"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1">
+            <TextBlock TextAlignment="Center" Margin="20"  Height="73" FontSize="34">Videojuegos</TextBlock>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="0,0,0,88" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="159"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Id Juego: " Width="Auto" />
+            <TextBox Grid.Row="0" Grid.Column="1" Name="txtId" Width="Auto"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Nombre: " Width="Auto" />
+            <TextBox Grid.Row="1" Grid.Column="1" Name="txtNombre" Width="Auto"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="ESBR: " Width="Auto" />
+            <ComboBox Grid.Row="2" FontSize="16" Grid.Column="1" Name="ddlESBR" Margin="10" Width="Auto">
+                <ComboBoxItem Content="Seleccionar ESBR" Selector.IsSelected="True" />
+                <ComboBoxItem Content="E" />
+                <ComboBoxItem Content="E+10" />
+                <ComboBoxItem Content="T" />
+                <ComboBoxItem Content="M" />
+                <ComboBoxItem Content="A" />
+            </ComboBox>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Genero: " Width="Auto" />
+            <TextBox Grid.Row="3" Grid.Column="1" Name="txtGenero" Width="Auto"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Empresa: " Width="Auto" />
+            <TextBox Grid.Row="4" Grid.Column="1" Name="txtEmpresa" Width="Auto"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Online: " Width="Auto" />
+            <ComboBox Grid.Row="5" FontSize="16" Grid.Column="1" Name="ddlOnline" Margin="10" Width="Auto">
+                <ComboBoxItem Content="Seleccionar Online" Selector.IsSelected="True" />
+                <ComboBoxItem Content="Si" />
+                <ComboBoxItem Content="No" />
+            </ComboBox>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Consola: " Width="Auto" />
+            <TextBox Grid.Row="6" Grid.Column="1" Name="txtConsola" Width="Auto"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Cant.Jugadores: " Width="Auto" />
+            <TextBox Grid.Row="7" Grid.Column="1" Name="txtJugadores" Width="Auto"/>
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="Precio: " Width="Auto" />
+            <TextBox Grid.Row="8" Grid.Column="1" Name="txtPrecio" Width="Auto"/>
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="Fecha Creación: " Width="Auto" />
+            <DatePicker Grid.Row="9" Grid.Column="1" Name="dpFC" FontSize="20"  Margin="10"/>
+            <TextBlock Grid.Row="10" Grid.Column="0" Text="Fecha Salida: " Width="Auto" />
+            <DatePicker Grid.Row="10" Grid.Column="1" Name="dpFS" FontSize="20"  Margin="10"/>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="2">
+            <Button Name="btnCancelar" Content="Limpiar" FontSize="25" Margin="137,10,103,10" Click="btnCancelar_Click" />
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="560"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+            </Grid.RowDefinitions>
+            <Grid  Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="167"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="185"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="160"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="3" Text="Buscador: " FontSize="25"  Width="130" Margin="10,10,10,34" Height="42" />
+                <TextBox Grid.Column="4"  Name="txtBuscador" FontSize="20" Margin="12,12,27,36"  Width="Auto" Height="42"/>
+                <Button Grid.Column="5" Margin="5,5,5,34" Name="btnBuscar" Content="Buscar" FontSize="25" Background="Orange" Foreground="Black" FontWeight="Bold" Click="btnBuscar_Click" Width="130" Height="42" />
+
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="222"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="222"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="222"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="222"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Margin="5" Name="btnAgregar" Content="Agregar" FontSize="25"  Click="btnAgregar_Click" />
+            <Button Grid.Column="3" Margin="5" Name="btnEditar" Content="Editar" FontSize="25" Click="btnEditar_Click" />
+            <Button Grid.Column="5" Margin="5" Name="btnEliminar" Content="Eliminar" FontSize="25" Click="btnEliminar_Click" />
+            <Button Grid.Column="7" Margin="5" Name="btnSalir" Content="Salir" FontSize="25" Background="#400000" Foreground="Bisque" Click="btnExit_Click" />
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" >
+            <Label Content="No records found." Name="lblCount" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFE10000"/>
+            <ScrollViewer>
+                <DataGrid AutoGenerateColumns="True" Name="gvData" SelectionMode="Single" FontSize="15" Padding="5" Background="Black" Width="1041" />
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>
